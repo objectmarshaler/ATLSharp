@@ -212,116 +212,116 @@ primary_oclExpression : variableExp | oclUndefinedExp | primitiveExp | ifExp | s
  
 
 STRING
-	:   '"' DoubleStringCharacters? '"'
-	|   '\'' SingleStringCharacters? '\''
-	;
+    :   '"' DoubleStringCharacters? '"'
+    |   '\'' SingleStringCharacters? '\''
+    ;
 
 fragment
 DoubleStringCharacters
-	:   DoubleStringCharacter+
-	;
+    :   DoubleStringCharacter+
+    ;
 
 fragment
 DoubleStringCharacter
-	:   ~["\\]
-	|   '\\' [btnfr"'\\]
-	;
+    :   ~["\\]
+    |   '\\' [btnfr"'\\]
+    ;
 
 fragment
 SingleStringCharacters
-	:   SingleStringCharacter+
-	;
+    :   SingleStringCharacter+
+    ;
 
 fragment
 SingleStringCharacter
-	:   ~['\\]
-	|   '\\' [btnfr"'\\]
-	;
+    :   ~['\\]
+    |   '\\' [btnfr"'\\]
+    ;
 
 
 // Integer Literals
 
 INTEGER
-	:   DecimalIntegerLiteral
-	;
+    :   DecimalIntegerLiteral
+    ;
 
 fragment
 DecimalIntegerLiteral
-	:   DecimalNumeral
-	;
-	
+    :   DecimalNumeral
+    ;
+    
 fragment
 DecimalNumeral
-	:   '0'
-	|   NonZeroDigit Digits?
-	;
+    :   '0'
+    |   NonZeroDigit Digits?
+    ;
 
 fragment
 Digits
-	:   Digit Digit*
-	;
+    :   Digit Digit*
+    ;
 
 fragment
 Digit
-	:   '0'
-	|   NonZeroDigit
-	;
+    :   '0'
+    |   NonZeroDigit
+    ;
 
 fragment
 NonZeroDigit
-	:   [1-9]
-	;
+    :   [1-9]
+    ;
 
 FLOAT
-	:   DecimalFloatingPointLiteral
-	;
+    :   DecimalFloatingPointLiteral
+    ;
 
 fragment
 DecimalFloatingPointLiteral
-	:   Digits '.' Digits? ExponentPart? FloatTypeSuffix?
-	|   '.' Digits ExponentPart? FloatTypeSuffix?
-	|   Digits ExponentPart FloatTypeSuffix?
-	|   Digits FloatTypeSuffix
-	;
+    :   Digits '.' Digits? ExponentPart? FloatTypeSuffix?
+    |   '.' Digits ExponentPart? FloatTypeSuffix?
+    |   Digits ExponentPart FloatTypeSuffix?
+    |   Digits FloatTypeSuffix
+    ;
 
 fragment
 ExponentPart
-	:   ExponentIndicator SignedInteger
-	;
+    :   ExponentIndicator SignedInteger
+    ;
 
 fragment
 ExponentIndicator
-	:   [eE]
-	;
+    :   [eE]
+    ;
 
 fragment
 SignedInteger
-	:   Sign? Digits
-	;
+    :   Sign? Digits
+    ;
 
 fragment
 Sign
-	:   [+-]
-	;
+    :   [+-]
+    ;
 
 fragment
 FloatTypeSuffix
-	:   [fFdD]
-	;
+    :   [fFdD]
+    ;
 
 IDENTIFIER
-	:   LetterOrDigit LetterOrDigit*
-	;
+    :   LetterOrDigit LetterOrDigit*
+    ;
 
 fragment
 Letter
-	:   [a-zA-Z$_] // these are the "Java letters"
-	;
+    :   [a-zA-Z$_] // these are the "Java letters"
+    ;
 
 fragment
 LetterOrDigit
-	:   [a-zA-Z0-9$_] // these are the "Java letters or digits" 
-	;
+    :   [a-zA-Z0-9$_] // these are the "Java letters or digits" 
+    ;
 
 
 //
@@ -329,12 +329,12 @@ LetterOrDigit
 //
 
 WS  :  [ \t\r\n\u000C]+ -> skip
-	;
+    ;
 
 COMMENT
-	:   '/*' .*? '*/' -> skip
-	;
+    :   '/*' .*? '*/' -> skip
+    ;
 
 LINE_COMMENT
-	:   '--' ~[\r\n]* -> skip
-	;
+    :   '--' ~[\r\n]* -> skip
+    ;

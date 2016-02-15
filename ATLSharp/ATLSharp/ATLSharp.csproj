@@ -53,6 +53,12 @@
     <Compile Include="ATLTransformationParser.cs" />
     <Compile Include="IATLTransformationParser.cs" />
     <Compile Include="ATLException.cs" />
+    <Compile Include="obj\Debug\ATLBaseListener.cs" />
+    <Compile Include="obj\Debug\ATLBaseVisitor.cs" />
+    <Compile Include="obj\Debug\ATLLexer.cs" />
+    <Compile Include="obj\Debug\ATLListener.cs" />
+    <Compile Include="obj\Debug\ATLParser.cs" />
+    <Compile Include="obj\Debug\ATLVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
